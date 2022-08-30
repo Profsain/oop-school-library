@@ -1,5 +1,6 @@
 require './main'
-require './decorator'
+require './capitalize_decorator'
+require './trimmer_decorator'
 
 class Person < Nameable
   def initialize(age, name = 'Unknown', parent_permission: true)
@@ -31,7 +32,7 @@ class Person < Nameable
   end
 end
 
-person = Person.new(22, ' profsain  ')
+person = Person.new(22, 'profsain Mudi Husseini')
 puts person.correct_name
 
 capitalized_person = CapitalizeDecorator.new(person)
