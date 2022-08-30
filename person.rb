@@ -1,4 +1,6 @@
-class Person
+require './main'
+
+class Person < Nameable
   def initialize(age, name = 'Unknown', parent_permission: true)
     @id = Random.rand(123..1000)
     @name = name
@@ -20,5 +22,9 @@ class Person
 
   def can_use_service
     is_of_age? || @parent_permission == true
+  end
+  
+  def correct_name
+    @name
   end
 end
