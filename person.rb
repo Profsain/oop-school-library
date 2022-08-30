@@ -1,7 +1,8 @@
 require './main'
+require './decorator'
 
 class Person < Nameable
-  def initialize(age, name = 'Unknown', parent_permission: true)
+  def initialize(age, name = 'Unknown', parent_permission = true)
     @id = Random.rand(123..1000)
     @name = name
     @age = age
@@ -21,10 +22,19 @@ class Person < Nameable
   public
 
   def can_use_service
-    is_of_age? || @parent_permission == true
+    of_age? || @parent_permission == true
   end
-  
+
   def correct_name
     @name
   end
 end
+
+person = Person.new(22, 'profsain  ')
+puts person.correct_name
+
+capitalizedPerson = CapitalizeDecorator.new(person)
+puts capitalizedPerson.correct_name
+
+capitalizedTrimmedPerson = TrimmerDecorator.new(capitalizedPerson)
+puts capitalizedTrimmedPerson.correct_name
