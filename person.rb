@@ -1,14 +1,18 @@
 require './main'
 require './capitalize_decorator'
 require './trimmer_decorator'
+require './rental'
 
 class Person < Nameable
+  attr_accessor :rental
+
   def initialize(age, name = 'Unknown', parent_permission: true)
     super()
     @id = Random.rand(123..1000)
     @name = name
     @age = age
     @parent_permission = parent_permission
+    @rentals = []
   end
 
   # getter and setter
