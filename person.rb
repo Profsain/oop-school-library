@@ -4,7 +4,9 @@ require './trimmer_decorator'
 require './rental'
 
 class Person < Nameable
-  attr_accessor :rental
+  # getter and setter
+  attr_reader :id
+  attr_accessor :name, :age, :rental
 
   def initialize(age, name = 'Unknown', parent_permission: true)
     super()
@@ -14,10 +16,6 @@ class Person < Nameable
     @parent_permission = parent_permission
     @rentals = []
   end
-
-  # getter and setter
-  attr_reader :id
-  attr_accessor :name, :age
 
   private
 
