@@ -1,4 +1,4 @@
-class Xzy  # rubocop:disable Metrics/ClassLength
+# rubocop:disable Metrics/ClassLength
 require 'io/console'
 require './book'
 require './person'
