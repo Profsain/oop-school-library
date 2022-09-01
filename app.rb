@@ -1,9 +1,9 @@
-require 'io/console'
-require_relative 'book'
-require_relative 'person'
-require_relative 'student'
-require_relative 'teacher'
-require_relative 'rental'
+# require 'io/console'
+require './book'
+require './person'
+require './student'
+require './teacher'
+require './rental'
 
 class App
   def menu
@@ -35,7 +35,7 @@ class App
     end
   end
 
-  def execute
+  def run
     choice = 0
     while choice != 7
       menu
