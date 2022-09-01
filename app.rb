@@ -4,7 +4,6 @@ require './person'
 require './student'
 require './teacher'
 require './rental'
-# rubocop:disable Metrics/ClassLength
 
 class App
   def menu
