@@ -101,14 +101,12 @@ class App
     puts 'Enter student information'
     print 'Name: '
     name = gets.chomp.strip.capitalize
-    puts
     print 'Age: '
     age = gets.chomp.strip.to_i
     while age <= 0 || age >= 100
       print 'Please input valid age between (1 - 100): '
       age = gets.chomp.strip.to_i
     end
-    puts
     print 'Has parent permission? [Y/N]: '
     permission = gets.chomp.strip.upcase
     case permission
@@ -129,7 +127,6 @@ class App
     puts
     print 'Specialization: '
     specialization = gets.chomp.strip.capitalize
-    puts
     print 'Age: '
     age = gets.chomp.strip.to_i
     while age <= 0 || age >= 100
@@ -170,7 +167,7 @@ class App
     list_people
     print 'Enter person ID: '
     person_id = gets.chomp.to_i
-    person_selected = @rentals.select { |rental| rental.permission == person_id}
+    person_selected = @rentals.select { |rental| rental.permission == person_id }
     puts 'Rentals Info:'
 
     if person_selected.empty?
@@ -184,6 +181,6 @@ class App
 
   def wait_cont
     print 'Press any key to continue....'
-    STDIN.getch 
+    $stdin.getch
   end
 end
