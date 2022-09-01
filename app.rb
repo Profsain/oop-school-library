@@ -5,7 +5,7 @@ require './student'
 require './teacher'
 require './rental'
 
-class App
+class App # rubocop:disable Metrics/ClassLength
   def menu
     puts
     puts 'The School Library Menu'
@@ -17,6 +17,7 @@ class App
     puts '6 - List all rentals for a given person id'
     puts '7 - Exit'
   end
+
   def check_menu(option)
     case option
     when 1
@@ -47,6 +48,7 @@ class App
     end
   end
 
+  # List all books
   def list_books
     puts '*' * 40
     if @books.empty?
@@ -58,6 +60,7 @@ class App
     end
   end
 
+  # Create a book
   def create_book
     puts
     print 'Title: '
@@ -68,6 +71,7 @@ class App
     @books.push(Book.new(title, author))
   end
 
+  # List all people
   def list_people
     puts '*' * 40
     if @people.empty
@@ -79,6 +83,7 @@ class App
     end
   end
 
+  # Create a person (teacher or student, not a plain Person)
   def create_person
     puts 'Do you want to create a student record or teacher record?'
     print 'Type 1 to create student or 2 to create teacher: '
