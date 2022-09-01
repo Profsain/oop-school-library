@@ -1,5 +1,8 @@
-class Nameable
-  def correct_name
-    raise NotImplementedError, "#{self.class} has not implemented method '#{__method__}'"
-  end
+require './app'
+
+def main
+  app = App.new()
+  app.execute
 end
+
+main
