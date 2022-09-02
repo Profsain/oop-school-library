@@ -27,7 +27,7 @@ class App # rubocop:disable Metrics/ClassLength
     puts '    6 - List all rentals for a given person id'
     puts '    7 - Exit'
   end
-  
+
   def check_menu(option)
     case option
     when 1
