@@ -1,4 +1,4 @@
-require './main'
+require './nameable'
 require './capitalize_decorator'
 require './trimmer_decorator'
 require './rental'
@@ -6,11 +6,11 @@ require './rental'
 class Person < Nameable
   # getter and setter
   attr_reader :id
-  attr_accessor :name, :age, :rentals
+  attr_accessor :name, :age, :rentals, :parent_permission
 
-  def initialize(age, name = 'Unknown', parent_permission: true)
+  def initialize(id, age, name = 'Unknown', parent_permission: true)
     super()
-    @id = Random.rand(123..1000)
+    @id = id
     @name = name
     @age = age
     @parent_permission = parent_permission
@@ -34,15 +34,7 @@ class Person < Nameable
   end
 
   def add_rental(date, book)
-    Rental.new(date, book, self)
+    rental = Rental.new(date, book, self)
+    @rentals << rental
   end
 end
-
-person = Person.new(22, 'profsain Mudi Husseini')
-puts person.correct_name
-
-capitalized_person = CapitalizeDecorator.new(person)
-puts capitalized_person.correct_name
-
-capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
-puts capitalized_trimmed_person.correct_name

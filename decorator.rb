@@ -1,4 +1,4 @@
-require './main'
+require './nameable'
 
 class Decorator < Nameable
   # assign a nameable object from params to an instance variable
