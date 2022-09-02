@@ -27,7 +27,6 @@ class App # rubocop:disable Metrics/ClassLength
     puts '    6 - List all rentals for a given person id'
     puts '    7 - Exit'
   end
-  
   def check_menu(option)
     case option
     when 1
@@ -153,9 +152,8 @@ class App # rubocop:disable Metrics/ClassLength
   end
 
   # Create a rental
-  def create_rental
-    puts 'New Book Rentals'
-    puts 'Select a book from the list below by number'
+  def create_rental # rubocop:disable Metrics/MethodLength
+    puts 'New Book Rentals. Select a book from the list below by number'
     list_books
     print 'Book choice number:=> '
     book_choice = gets.chomp.to_i

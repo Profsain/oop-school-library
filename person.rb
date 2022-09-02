@@ -37,11 +37,4 @@ class Person < Nameable
     rental = Rental.new(date, book, self)
     @rentals << rental
   end
-
-  def test
-    puts 'I can work properly'
-  end
 end
-
-prof = Person.new(24, 'Profsain', parent_permission: false)
-puts prof.test
