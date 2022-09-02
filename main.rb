@@ -2,7 +2,7 @@ require './app'
 
 def main
   app = App.new
-  app.run_commend
+  app.run
 end
 
-main
+main()

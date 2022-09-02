@@ -4,9 +4,9 @@ require './classroom'
 class Student < Person
   attr_reader :classroom
 
-  def initialize(age, name, parent_permission, classroom)
-    super(age, name, parent_permission)
-    @classroom = classroom
+  def initialize(id, age, classroom, name = 'Unknown', parent_permission: true)
+    super(id, age, name, parent_permission: parent_permission)
+    @classroom = Classroom.new(classroom)
   end
 
   def play_hooky
