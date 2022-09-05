@@ -2,13 +2,13 @@ require 'io/console'
 require './modules/book_handle.rb'
 require './modules/people_handle.rb'
 require './modules/rental_handle.rb'
-class App # rubocop:disable Metrics/ClassLength
+class App
   attr_reader :books, :person
 
   # people_handle.rb
   include PeopleHandle
 
-  # book handle 
+  # book handle
   include BookHandle
 
   # rentals handle

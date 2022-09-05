@@ -44,5 +44,4 @@ module RentalHandle
       end
     end
   end
-  
 end

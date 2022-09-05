@@ -1,8 +1,8 @@
 require './book.rb'
 
 module BookHandle
-   # List all books
-   def list_books
+  # List all books
+  def list_books
     puts '*' * 40
     if @books.empty?
       puts 'The book list is empty. Create new book!'
@@ -24,5 +24,4 @@ module BookHandle
     @books.push(Book.new(title, author))
     puts "Title: #{title} - Author: #{author}. Created successfully!"
   end
-
 end
