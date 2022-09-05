@@ -1,12 +1,14 @@
 require 'io/console'
 require './person'
-require './book'
 require './student'
 require './teacher'
 require './rental'
-
+require './book_handle.rb'
 class App # rubocop:disable Metrics/ClassLength
   attr_reader :books, :person
+
+  # book handle 
+  include BookHandle
 
   def initialize
     @books = []
@@ -62,29 +64,12 @@ class App # rubocop:disable Metrics/ClassLength
     end
   end
 
-  # List all books
-  def list_books
-    puts '*' * 40
-    if @books.empty?
-      puts 'The book list is empty. Create new book!'
-    else
-      @books.each_with_index do |book, index|
-        puts "#{index}. Title: #{book.title} Authored by: #{book.author}"
-      end
-    end
+  def wait_cont
+    print 'Press any key to continue....'
+    $stdin.getc
   end
+# ------------------------------------------------------------
 
-  # Create a book
-  def create_book
-    puts
-    print 'Title: '
-    title = gets.chomp.strip.capitalize
-    puts
-    print 'Author: '
-    author = gets.chomp.strip.capitalize
-    @books.push(Book.new(title, author))
-    puts "Title: #{title} - Author: #{author}. Created successfully!"
-  end
 
   # List all people
   def list_people
@@ -194,10 +179,5 @@ class App # rubocop:disable Metrics/ClassLength
         puts "Date: #{rental.date} =>> Book: #{rental.book}"
       end
     end
-  end
-
-  def wait_cont
-    print 'Press any key to continue....'
-    $stdin.getc
   end
 end
