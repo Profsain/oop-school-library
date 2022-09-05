@@ -24,8 +24,6 @@ Style/Documentation:
   Enabled: false
 Style/ClassAndModuleChildren:
   Enabled: false
-Style/GlobalStdStream:
-  Enabled: false
 Style/EachForSimpleLoop:
   Enabled: false
 Style/AndOr:
