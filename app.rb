@@ -2,6 +2,8 @@ require 'io/console'
 require './modules/book_handle.rb'
 require './modules/people_handle.rb'
 require './modules/rental_handle.rb'
+require './modules/reading_data.rb'
+
 class App
   attr_reader :books, :person
 
@@ -14,10 +16,14 @@ class App
   # rentals handle
   include RentalHandle
 
+  include ReadData
+
   def initialize
     @books = []
     @people = []
     @rentals = []
+    read_books
+    read_people
   end
 
   def menu
