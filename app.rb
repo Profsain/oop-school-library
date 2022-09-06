@@ -1,8 +1,8 @@
 require 'io/console'
-require './modules/book_handle.rb'
-require './modules/people_handle.rb'
-require './modules/rental_handle.rb'
-require './modules/reading_data.rb'
+require_relative './modules/book_handle.rb'
+require_relative './modules/people_handle.rb'
+require_relative './modules/rental_handle.rb'
+require_relative './modules/reading_data.rb'
 
 class App
   attr_reader :books, :person
@@ -68,7 +68,7 @@ class App
       puts
       print 'Please choose an option by entering a number:=> '
       choice = gets.chomp.strip.to_i
-      puts "The Menu number is = #{choice}"
+      puts "The Menu number entered = #{choice}"
       check_menu(choice)
       wait_cont if choice != 7
       puts
@@ -77,6 +77,6 @@ class App
 
   def wait_cont
     print 'Press any key to continue....'
-    $stdin.getc
+    STDIN.getch
   end
 end
