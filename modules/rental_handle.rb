@@ -1,6 +1,8 @@
 require './rental.rb'
+require './modules/writing_data'
 
 module RentalHandle
+  include WriteData
   # Create a rental
   def create_rental # rubocop:disable Metrics/MethodLength
     puts 'New Book Rentals. Select a book from the list below by number'
@@ -24,6 +26,7 @@ module RentalHandle
     print 'Enter date of booking: (yyyy/mm/dd):=> '
     date = gets.chomp.strip
     @rentals << Rental.new(date, person, book)
+    write_rentals
     puts 'Book rental successful (:-:).'
   end
 

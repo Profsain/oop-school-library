@@ -1,4 +1,5 @@
 require './book.rb'
+
 module WriteData
 
   def write_books
@@ -25,14 +26,14 @@ end
     end
 end
 
-#   def write_books
-#     File.open("./Data/books.json", "w") do |file|
-#       books_to_store = []
-#       @books.each do |book| 
-#          books_to_store << {"title" => book.title, "author" => book.author}
-#       end
-#       file.write JSON.generate(books_to_store)
-#     end
-# end
+  def write_rentals
+    File.open("./Data/rentals.json", "w") do |file|
+      rentals_to_store = []
+      @rentals.each do |rental| 
+         rentals_to_store << {"date" => rental.date, "person" => rental.person, "book" => rental.book}
+      end
+      file.write JSON.generate(rentals_to_store)
+    end
+end
 end
 

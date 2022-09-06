@@ -1,6 +1,8 @@
 require './book.rb'
 require './student.rb'
 require './teacher.rb'
+require './rental.rb'
+
 module ReadData
 
   def read_books
@@ -30,6 +32,16 @@ end
         puts "this is t"
     end
   end
+end
+
+def read_rentals
+  File.open("./Data/rentals.json", "r") do |file|
+    if file.size() == 0 
+      return
+  end
+  stored_rentals = JSON.parse(file.read)
+  stored_rentals.each { |rental| @rentals << Rental.new(rental["date"], rental["person"], rental["book"]) }
+end
 end
 end
 

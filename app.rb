@@ -24,6 +24,7 @@ class App
     @rentals = []
     read_books
     read_people
+    read_rentals
   end
 
   def menu

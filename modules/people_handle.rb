@@ -1,6 +1,7 @@
 require './student.rb'
 require './teacher.rb'
 require './modules/writing_data.rb'
+
 module PeopleHandle
   # List all people
   include WriteData
