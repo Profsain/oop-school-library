@@ -23,13 +23,11 @@ end
     stored_people = JSON.parse(file.read)
     stored_people.each do |person_stored| 
       if person_stored["class"] === 'Student'
-        puts "this is s"
         new_student = Student.new(person_stored["id"], person_stored["age"],1, person_stored["name"]) 
         @people << new_student
       elsif person_stored["class"] === 'Teacher'
         new_teacher = Teacher.new(person_stored["id"], person_stored["age"],person_stored["specialization"],person_stored["name"]) 
         @people << new_teacher
-        puts "this is t"
     end
   end
 end

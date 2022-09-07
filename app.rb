@@ -61,7 +61,6 @@ class App
   end
 
   def run
-    puts 'run code start'
     choice = 0
     while choice != 7
       menu
