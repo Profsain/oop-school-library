@@ -1,8 +1,11 @@
 require './student.rb'
 require './teacher.rb'
+require './modules/writing_data.rb'
 
 module PeopleHandle
   # List all people
+  include WriteData
+
   def list_people
     puts '*' * 40
     if @people.empty?
@@ -47,6 +50,7 @@ module PeopleHandle
       permission = false
     end
     @people << Student.new(Random.rand(123...1000), age, nil, name, parent_permission: permission)
+    write_people
     puts 'Student created successfully (:-:).'
   end
 
@@ -65,6 +69,7 @@ module PeopleHandle
       age = gets.chomp.strip.to_i
     end
     @people << Teacher.new(Random.rand(123..1000), age, specialization, name)
+    write_people
     puts 'Teachers record created successfully (:-:).'
   end
 end
