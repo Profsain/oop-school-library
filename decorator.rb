@@ -1,6 +1,7 @@
-require './nameable'
+require_relative  './nameable'
 
 class Decorator < Nameable
+  attr_reader :nameable
   # assign a nameable object from params to an instance variable
   def initialize(nameable)
     super()
