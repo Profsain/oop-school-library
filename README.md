@@ -11,8 +11,15 @@ In this project, I implemented Object Oriented Programming in Ruby by building S
 
 👤 **Husseini Mudi**
 
-- GitHub: [@githubhandle](https://github.com/Profsain)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/profsain)
+- GitHub: [@profsain](https://github.com/Profsain)
+- LinkedIn: [@ Profsain LinkedIn](https://www.linkedin.com/in/profsain)
+- Twitter: [@profsain Tiwtter](https://twitter.com/profsain)
+
+👤 **Mohammed Raad**
+
+- GitHub: [@Mohammed Raad](https://github.com/MoRaad97)
+- LinkedIn: [@Mohammed LinkedIN](https://www.linkedin.com/in/mohammed-raad/)
+- Twitter: [@Mohammed Raad Tiwtter](https://twitter.com/MohammedRaadz)
 
 ## Setup
 

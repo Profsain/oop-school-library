@@ -1,7 +1,7 @@
-require './nameable'
-require './capitalize_decorator'
-require './trimmer_decorator'
-require './rental'
+require_relative  './nameable'
+require_relative  './capitalize_decorator'
+require_relative  './trimmer_decorator'
+require_relative  './rental'
 
 class Person < Nameable
   # getter and setter
@@ -34,7 +34,7 @@ class Person < Nameable
   end
 
   def add_rental(date, book)
-    rental = Rental.new(date, book, self)
+    rental = Rental.new(date, self, book)
     @rentals << rental
   end
 end
