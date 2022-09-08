@@ -27,10 +27,10 @@ describe 'People Related Classes (Person, Student, Teacher)' do
     end
 
     it 'add rental to person using add_rental function' do
-      rental = person.add_rental('2022-09-08', 'The Hobbit')
-      expect(rental.person.name).to eq("John") 
-      expect(rental.date).to eq("2022-09-08") 
-      expect(rental.book).to eq("The Hobbit") 
+      person.add_rental('2022-09-08', 'The Hobbit')
+      expect(person.rentals[0].person.name).to eq("John") 
+      expect(person.rentals[0].date).to eq("2022-09-08") 
+      expect(person.rentals[0].book).to eq("The Hobbit") 
     end
 
   end
