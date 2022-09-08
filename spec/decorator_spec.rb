@@ -2,10 +2,11 @@
 require_relative  '../decorator.rb'
 require_relative  '../capitalize_decorator.rb'
 require_relative  '../trimmer_decorator.rb'
+require_relative  '../person.rb'
 
 describe "Decorator design pattern Classes" do
     $person = Person.new(1,18,"mohammedraad")
-    
+
     context CapitalizeDecorator do
     it 'capitalize the name' do
       capitalize_decorator = CapitalizeDecorator.new($person)
